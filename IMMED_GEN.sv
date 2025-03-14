@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Cal Poly
+// Engineer: Giselle Hinahon
 // 
-// Create Date: 10/16/2024 02:37:13 PM
+// Create Date: 03/10/2025 02:37:13 PM
 // Design Name: 
 // Module Name: IMMED_GEN
 // Project Name: 
