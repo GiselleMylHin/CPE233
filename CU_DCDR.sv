@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Cal Poly
+// Engineer: Giselle Hinahon
 // 
-// Create Date: 11/03/2024 07:34:02 PM
+// Create Date: 03/09/2025 07:34:02 PM
 // Design Name: 
 // Module Name: CU_DCDR
 // Project Name: 
@@ -22,18 +22,18 @@
 
 module CU_DCDR(
 //initiallizing inputs and outputs
-    input [6:0] opcode,
-    input [2:0] funct3, 
-    input ir_30,
-    input int_taken,
-    input br_eq,
-    input br_lt,
-    input br_ltu,
-    output logic [3:0] ALU_FUN,
-    output logic [1:0] srcA_SEL,
-    output logic [2:0] srcB_SEL,
-    output logic [2:0] PC_SEL,
-    output logic [1:0] RF_SEL
+    input [6:0] opcode,             //connected to ott. top IR[6:0]
+    input [2:0] funct3,             //connected to ott. top IR[14:12]
+    input ir_30,                    //connected to ott. top IR[30]
+    input int_taken,                //connected to ott. top int_taken
+    input br_eq,                    //connected to ott. top br_eq
+    input br_lt,                    //connected to ott. top br_lt 
+    input br_ltu,                   //connected to ott. top br_ltu
+    output logic [3:0] ALU_FUN,     //connected to ott. top ALU_FUN
+    output logic [1:0] srcA_SEL,    //connected to ott. top srcA_SEL
+    output logic [2:0] srcB_SEL,    //connected to ott. top srcB_SEL
+    output logic [2:0] PC_SEL,      //connected to ott. top PC
+    output logic [1:0] RF_SEL       //connected to ott. top RF_WE
     );
 always_comb begin
         ALU_FUN = 4'b0;
