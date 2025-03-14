@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Cal Poly
+// Engineer: Giselle Hinahon
 // 
-// Create Date: 10/23/2024 02:40:14 PM
-// Design Name: 
+// Create Date: 02/20/2025 12:58:39 PM
+// Design Name: Branch Address Generator
 // Module Name: BAG
-// Project Name: 
+// Project Name: pain
 // Target Devices: 
 // Tool Versions: 
 // Description: 
@@ -21,17 +21,17 @@
 
 
 module BAG(
-input logic [31:0] rs1,
-input logic [31:0] PC,
-input logic [31:0] IType,
-input logic [31:0] JType,
-input logic [31:0] BType,
+    input logic [31:0] rs1,    //connected to ott. top rs1
+    input logic [31:0] PC,     //connected to ott. top PC
+    input logic [31:0] IType,  //connected to ott. top Itype
+    input logic [31:0] JType,  //connected to ott. top Jtype
+    input logic [31:0] BType,  //connected to ott. top Btype
 
-output logic [31:0] branch,
-output logic [31:0] jal,
-output logic [31:0] jalr
+    output logic [31:0] branch, //connected to ott. top BRANCH
+    output logic [31:0] jal,    //connected to ott. top JAL
+    output logic [31:0] jalr    //connected to ott. top JALR
     );
-    assign branch = PC + BType; //branch address generation formating 
-    assign jal = PC + JType; //jal address generation formating 
-    assign jalr = rs1 + IType; //jalr address generation formating
+    assign branch = PC + BType;         //branch address generation formating 
+    assign jal = PC + JType;            //jal address generation formating 
+    assign jalr = rs1 + IType;          //jalr address generation formating
 endmodule
