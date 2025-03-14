@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Cal Poly
+// Engineer: Giselle Hinahon
 // 
-// Create Date: 11/03/2024 07:35:43 PM
+// Create Date: 03/09/2024 07:35:43 PM
 // Design Name: 
 // Module Name: CU_FSM
-// Project Name: 
+// Project Name: pain
 // Target Devices: 
 // Tool Versions: 
 // Description: 
@@ -22,20 +22,20 @@
 
 module CU_FSM(
 //initiallizing inputs and outputs
-input rst,
-    input clk,
-    input [6:0] opcode, 
-    input [2:0] funct3,
-    input intr, 
-    output logic PC_WE,
-    output logic RF_WE,
-    output logic mem_WE2,
-    output logic memRDEN1,
-    output logic memRDEN2,
-    output logic reset,
-    output logic csr_WE,
-    output logic int_taken,
-    output logic mret_exec
+input rst,                             //connected to ott. top RST
+    input clk,                         //connected to ott. top CLK
+    input [6:0] opcode,                //connected to ott. top IR[6:0]
+    input [2:0] funct3,                //connected to ott. top IR[14:12]
+    input intr,                        //connected to ott. top INTR
+    output logic PC_WE,                //connected to ott. top PC_WE
+    output logic RF_WE,                //connected to ott. top RF_WE
+    output logic mem_WE2,              //connected to ott. top mem_WE2
+    output logic memRDEN1,             //connected to ott top memRDEN1
+    output logic memRDEN2,             //connected to ott top memRDEN2
+    output logic reset,                //connected to ott top reset
+    output logic csr_WE,               //connected to ott top csr_WE
+    output logic int_taken,            //connected to ott top int_taken
+    output logic mret_exec             //connected to ott top meret_exe
     );
     // defining states and statetypes in order to make it clear what state we are in
     typedef enum { ST_INIT, ST_FETCH, ST_EXEC, ST_WRITEBACK } state_type;
